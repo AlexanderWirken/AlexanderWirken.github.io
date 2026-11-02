@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Alexander Wirken</title>
+  <meta name="description" content="Alexander Wirken is a journalism student at the University of Nebraska-Lincoln, a Naval ROTC midshipman, and an aviation photographer.">
+  <meta property="og:title" content="About | Alexander Wirken">
+  <meta property="og:description" content="Journalism student at UNL, Naval ROTC, aviation photographer.">
+  <meta property="og:type" content="profile">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f1b2d;
+      --navy-2: #1c2f4d;
+      --ink: #1d2433;
+      --muted: #5b6577;
+      --line: #dbe1ea;
+      --paper: #f7f8fa;
+      --card: #ffffff;
+      --accent: #c8102e;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(15, 27, 45, .94);
+      backdrop-filter: blur(8px);
+    }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 58px; }
+    nav .brand { color: #fff; font-family: "Fraunces", Georgia, serif; font-weight: 700; text-decoration: none; letter-spacing: .02em; }
+    nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+    nav ul a { color: #c9d3e3; text-decoration: none; font-size: .9rem; font-weight: 500; }
+    nav ul a:hover { color: #fff; }
+
+    /* Hero */
+    header.hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: #fff;
+      padding: 88px 0 96px;
+    }
+    .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; color: #9fb2d1; font-weight: 600; margin: 0 0 14px; }
+    h1 { font-family: "Fraunces", Georgia, serif; font-size: clamp(2.6rem, 7vw, 4.4rem); line-height: 1.05; margin: 0 0 18px; }
+    .tagline { font-size: 1.2rem; color: #d6deeb; max-width: 620px; margin: 0 0 30px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 34px; }
+    .chip { border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 6px 14px; font-size: .85rem; color: #e6ecf6; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-block; padding: 11px 22px; border-radius: 10px; font-weight: 600; font-size: .95rem; text-decoration: none; }
+    .btn.primary { background: #fff; color: var(--navy); }
+    .btn.primary:hover { background: #e9eef7; }
+    .btn.ghost { border: 1px solid rgba(255,255,255,.4); color: #fff; }
+    .btn.ghost:hover { background: rgba(255,255,255,.1); }
+
+    /* Sections */
+    section { padding: 64px 0 8px; }
+    h2 {
+      font-family: "Fraunces", Georgia, serif; font-size: 1.9rem; margin: 0 0 24px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    .lead { font-size: 1.12rem; max-width: 720px; }
+    .lead p { margin: 0 0 16px; }
+
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 22px 26px; margin-bottom: 16px;
+    }
+    .card h3 { margin: 0; font-size: 1.05rem; }
+    .card .org { color: var(--muted); font-size: .95rem; }
+    .card .when { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+    .row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+    .card p, .card ul { margin: 10px 0 0; color: #36405a; font-size: .97rem; }
+    .card ul { padding-left: 20px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+    .grid .card { margin: 0; }
+    .grid .card h3 { margin-bottom: 4px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+    .tags li { background: #e9eef7; color: var(--navy-2); border-radius: 8px; padding: 7px 14px; font-size: .9rem; font-weight: 500; }
+
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+    .contact { text-align: center; padding: 8px 0 24px; }
+    .contact p { color: var(--muted); margin: 0 auto 22px; max-width: 520px; }
+    .contact .btn.primary { background: var(--navy); color: #fff; }
+    .contact .btn.primary:hover { background: var(--navy-2); }
+    .contact .btn.ghost { border-color: var(--line); color: var(--ink); }
+    .contact .btns { justify-content: center; }
+
+    footer { padding: 36px 0 48px; text-align: center; color: var(--muted); font-size: .85rem; }
+
+    @media (max-width: 720px) {
+      nav ul { gap: 14px; }
+      nav ul li:nth-child(n+4) { display: none; }
+      .two { grid-template-columns: 1fr; gap: 0; }
+      header.hero { padding: 64px 0 72px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Alexander Wirken</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">University of Nebraska-Lincoln</p>
+    <h1>Alexander Wirken</h1>
+    <p class="tagline">Journalism student, Naval ROTC midshipman, and aviation photographer from Kansas City.</p>
+    <div class="chips">
+      <span class="chip">Journalism &middot; Class of 2028</span>
+      <span class="chip">Naval ROTC</span>
+      <span class="chip">Photojournalism</span>
+      <span class="chip">Fluent in French</span>
+    </div>
+    <div class="btns">
+      <a class="btn primary" href="mailto:awirken012@gmail.com">Get in touch</a>
+      <a class="btn ghost" href="https://www.instagram.com/callsign_images/" target="_blank" rel="noopener">@Callsign_Images</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2>About me</h2>
+    <div class="lead">
+      <p>I'm a journalism student at the University of Nebraska-Lincoln, expected to graduate in May 2028. I grew up in Kansas City and came to Lincoln in 2024, where I've balanced classes with Naval ROTC, campus jobs, and a lot of time behind a camera.</p>
+      <p>As Public Affairs Officer for my Naval ROTC unit, I get to practice what I'm studying: telling clear, accurate stories about the people around me. Outside of class, I photograph aircraft and share the work on Instagram as Callsign_Images, play guitar, and stay active with intramural football and softball.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="card">
+      <div class="row">
+        <h3>Desk Assistant <span class="org">&middot; University Housing, University of Nebraska</span></h3>
+        <span class="when">Apr 2026 &ndash; Present</span>
+      </div>
+      <p>Greet and support residents and manage front desk operations for UNL University Housing, helping deliver on the mission of the student housing organization.</p>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <h3>Dining Assistant <span class="org">&middot; Willa Cather Dining, University of Nebraska</span></h3>
+        <span class="when">Feb 2026 &ndash; Jul 2026</span>
+      </div>
+      <p>Supported customer service and assisted the dining staff while serving meals to the student body.</p>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <h3>Front of House Employee <span class="org">&middot; Betty Rae's</span></h3>
+        <span class="when">Aug 2021 &ndash; Aug 2025</span>
+      </div>
+      <ul>
+        <li>Delivered high-quality customer service in a fast-paced environment.</li>
+        <li>Kept daily operations clean, organized, and efficient.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <div class="row">
+        <h3>University of Nebraska-Lincoln <span class="org">&middot; Lincoln, NE</span></h3>
+        <span class="when">2024 &ndash; Expected May 2028</span>
+      </div>
+      <ul>
+        <li>Journalism</li>
+        <li>Naval ROTC, 2024 &ndash; Present</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2>Projects &amp; leadership</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Callsign_Images</h3>
+        <p>An aviation photography account on Instagram, where I share photos of aircraft.</p>
+      </div>
+      <div class="card">
+        <h3>Public Affairs Officer</h3>
+        <p>Naval ROTC, University of Nebraska-Lincoln.</p>
+      </div>
+      <div class="card">
+        <h3>Memorial Stadium cleaning</h3>
+        <p>A multimedia analysis report project on the cleaning of Memorial Stadium.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="tags">
+      <li>Fluent in French</li>
+      <li>Leadership &amp; team coordination</li>
+      <li>Communication &amp; public speaking</li>
+      <li>Time management &amp; organization</li>
+      <li>Customer service</li>
+      <li>Problem-solving &amp; attention to detail</li>
+      <li>Collaboration &amp; independent work</li>
+      <li>Community service</li>
+    </ul>
+  </section>
+
+  <section id="interests">
+    <div class="two">
+      <div>
+        <h2>Activities</h2>
+        <ul class="tags">
+          <li>Naval ROTC</li>
+          <li>Intramural football</li>
+          <li>Intramural softball</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Interests</h2>
+        <ul class="tags">
+          <li>Fitness &amp; team sports</li>
+          <li>Guitar &amp; music theory</li>
+          <li>Photojournalism</li>
+          <li>Aviation &amp; aerospace</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Let's connect</h2>
+    <div class="contact">
+      <p>Interested in working together, or just want to talk aviation, photography, or journalism? Send me a note.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:awirken012@gmail.com">awirken012@gmail.com</a>
+        <a class="btn ghost" href="https://www.instagram.com/callsign_images/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Alexander Wirken
+</footer>
+
+</body>
+</html>
